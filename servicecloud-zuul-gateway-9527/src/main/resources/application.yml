@@ -1,0 +1,30 @@
+server:
+  port: 9527
+
+spring:
+  application:
+    name: servicecloud-zuul-gateway
+
+eureka:
+  instance:
+    instance-id: gateway-9527.com
+    prefer-ip-address: true #访问路径可以显示IP地址
+  client:
+    #    register-with-eureka: false #是否向注册中心注册自己，false表示不注册
+    #    fetch-registry: false   #false表示自己就是注册中心，职责是维护服务实例，并不需要去检索服务
+    service-url:
+      defaultZone: http://127.0.0.1:7001/eureka/,http://127.0.0.1:7002/eureka/,http://127.0.0.1:7003/eureka/  #设置与Eureka Server交互的地址查询服务和注册服务
+
+info:
+  app.name: lp_spirngcloud
+  company.name: www.bailiguoxiang.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+zuul:
+  prefix: /lp       # 设置统一公共前缀, 访问地
+  #  设置服务名不能访问  多个可以 ignored-services: "*"
+  ignored-services: "servicecloud-hystrix-provider"
+  routes:
+#    访问路径http://127.0.0.1:9527/servicecloud-hystrix-provider/console/test?id=6
+    mydept.serviceId: servicecloud-hystrix-provider
+    mydept.path: /mydept/**
