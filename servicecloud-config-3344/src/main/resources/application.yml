@@ -2,7 +2,7 @@ server:
   port: 3344
 eureka:
   instance:
-    hostname: localhost #eureka服务端的实例名称
+    hostname: config-server #eureka服务端的实例名称
   client:
     register-with-eureka: false #是否想注册中心注册自己
     fetch-registry: false   #是否自己就是注册中心，职责是维护服务实例，并不需要去检索服务

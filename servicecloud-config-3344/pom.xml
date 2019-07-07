@@ -12,6 +12,7 @@
     <artifactId>servicecloud-config-3344</artifactId>
 
 <dependencies>
+
     <!--图形化监控监控-->
     <dependency>
         <groupId>org.springframework.boot</groupId>
