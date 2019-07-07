@@ -29,6 +29,7 @@
         <module>servicecloud-provider-hystrix-8005</module>
         <module>servicecloud-provider-hystrix-8006</module>
         <module>servicecloud-zuul-gateway-9527</module>
+        <module>servicecloud-config-3344</module>
     </modules>
 
 
